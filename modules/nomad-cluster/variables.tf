@@ -191,6 +191,11 @@ variable "security_groups" {
   default     = []
 }
 
+variable "target_arns" {
+  type    = list(string)
+  default = []
+}
+
 variable "tags" {
   description = "List of extra tag blocks added to the autoscaling group configuration. Each element in the list is a map containing keys 'key', 'value', and 'propagate_at_launch' mapped to the respective values."
   type = list(object({
@@ -199,7 +204,7 @@ variable "tags" {
     propagate_at_launch = bool
   }))
   default = []
-  
+
 }
 
 variable "ebs_block_devices" {
